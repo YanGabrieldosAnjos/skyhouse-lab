@@ -1,0 +1,17 @@
+{
+  "name": "skyhouse-lab",
+  "private": true,
+  "version": "0.0.0",
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web -c blue,magenta \"npm run dev -w api\" \"npm run dev -w web\"",
+    "build": "npm run build -w api && npm run build -w web",
+    "start": "npm run start -w api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0",
+    "typescript": "^5.7.2"
+  }
+}
